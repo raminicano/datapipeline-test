@@ -1,0 +1,36 @@
+.
+├── README.md
+├── nest-cli.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app.controller.spec.ts
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   ├── common
+│   │   ├── database.config.ts
+│   │   ├── preprocessing.ts
+│   │   └── utils.ts
+│   ├── main.ts
+│   ├── optimized
+│   │   ├── optimized.controller.ts
+│   │   ├── optimized.module.ts
+│   │   └── optimized.service.ts
+│   ├── restaurant
+│   │   ├── entity
+│   │   │   ├── location.entity.ts
+│   │   │   └── restaurant.entity.ts
+│   │   ├── restaurant.controller.ts
+│   │   ├── restaurant.module.ts
+│   │   └── restaurant.service.ts
+│   └── sequential
+│       ├── sequential.controller.ts
+│       ├── sequential.module.ts
+│       └── sequential.service.ts
+├── struct.txt
+├── test
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── tsconfig.build.json
+└── tsconfig.json
