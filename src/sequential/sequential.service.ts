@@ -17,22 +17,22 @@ export class SequentialService {
       // 시작 시간 기록
       const startTime = Date.now();
 
-      for (
-        let i = parseInt(start, 10);
-        i <= parseInt(end, 10);
-        i += parseInt(batchSize, 10)
-      ) {
-        const batchEnd = Math.min(
-          i + parseInt(batchSize, 10) - 1,
-          parseInt(end, 10),
-        ); // 각 요청의 종료 인덱스 계산
+      console.log(`start: ${start}, end: ${end}, batchSize: ${batchSize}`);
+      console.log(
+        `print type of start: ${typeof start}, end: ${typeof end}, batchSize: ${typeof batchSize}`,
+      );
+
+      for (let i = start; i <= end; i += batchSize) {
+        console.log(
+          `Fetching and processing data from ${i} to ${i + batchSize - 1}`,
+        );
+        const batchEnd = i + batchSize - 1; // 각 요청의 종료 인덱스 계산
         console.log(`Fetching and processing data from ${i} to ${batchEnd}`);
         const API_URL = `http://openapi.seoul.go.kr:8088/${process.env.API_KEY}/json/LOCALDATA_072404/${i}/${batchEnd}/`;
         console.log(API_URL);
+
         // 1. API로부터 데이터 가져오기
         const response = await axios.get(API_URL);
-        console.log(response.data);
-        console.log(response.data.LOCALDATA_072404);
         const rawData = response.data.LOCALDATA_072404.row;
 
         // 2. 데이터 전처리 및 저장 (preprocessing.ts에서 가져옴)
