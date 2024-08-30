@@ -3,7 +3,6 @@ import axios from 'axios';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Restaurant } from './entity/restaurant.entity';
-import { Location } from './entity/location.entity';
 import { processAndSaveData } from '../common/preprocessing'; // 전처리 모듈 가져오기
 import * as dotenv from 'dotenv'; // dotenv 불러오기
 // load dotenv
@@ -16,8 +15,6 @@ export class RestaurantService {
   constructor(
     @InjectRepository(Restaurant)
     private readonly restaurantRepository: Repository<Restaurant>,
-    @InjectRepository(Location)
-    private readonly locationRepository: Repository<Location>,
   ) {}
 
   async fetchAndProcessData() {
@@ -27,11 +24,7 @@ export class RestaurantService {
       const rawData = response.data.LOCALDATA_072404.row;
 
       // 2. 데이터 전처리 및 저장 (preprocessing.ts에서 가져옴)
-      await processAndSaveData(
-        rawData,
-        this.restaurantRepository,
-        this.locationRepository,
-      );
+      await processAndSaveData(rawData, this.restaurantRepository);
     } catch (error) {
       console.log(error);
       throw new HttpException(

@@ -1,10 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Location } from './location.entity';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Restaurant {
-  @PrimaryGeneratedColumn()
-  id: string;
+  @PrimaryGeneratedColumn({ type: 'bigint' })
+  id: bigint;
 
   @Column()
   name: string;
@@ -21,12 +20,16 @@ export class Restaurant {
   @Column()
   address: string;
 
-  @Column({ type: 'timestamp' })
+  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
 
-  @Column({ type: 'timestamp' })
+  @Column({
+    type: 'timestamp',
+    default: () => 'CURRENT_TIMESTAMP',
+    onUpdate: 'CURRENT_TIMESTAMP',
+  })
   updatedAt: Date;
 
-  @ManyToOne(() => Location, (location) => location.restaurants)
-  location: Location;
+  @Column({ type: 'double', nullable: true })
+  average: number;
 }

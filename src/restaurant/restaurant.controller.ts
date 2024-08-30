@@ -7,7 +7,7 @@ import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 export class RestaurantController {
   constructor(private readonly restaurantService: RestaurantService) {}
 
-  @Get('fetch-and-process')
+  @Get('fetch-and-process-sample')
   @ApiOperation({ summary: 'Fetch and process restaurant data' })
   @ApiResponse({ status: 200, description: 'Data processed successfully.' })
   @ApiResponse({ status: 400, description: 'Failed to process data.' })
