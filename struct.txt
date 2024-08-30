@@ -28,12 +28,17 @@
 │   │   ├── restaurant.controller.ts
 │   │   ├── restaurant.module.ts
 │   │   └── restaurant.service.ts
-│   └── sequential
+│   ├── sequential
+│   │   ├── dto
+│   │   │   └── sequential.dto.ts
+│   │   ├── sequential.controller.ts
+│   │   ├── sequential.module.ts
+│   │   └── sequential.service.ts
+│   └── thread
 │       ├── dto
-│       │   └── sequential.dto.ts
-│       ├── sequential.controller.ts
-│       ├── sequential.module.ts
-│       └── sequential.service.ts
+│       │   └── thread.dto.ts
+│       ├── thread.controller.ts
+│       └── thread.service.ts
 ├── struct.txt
 ├── test
 │   ├── app.e2e-spec.ts
@@ -41,4 +46,4 @@
 ├── tsconfig.build.json
 └── tsconfig.json
 
-18 directories, 99 files
+22 directories, 111 files
