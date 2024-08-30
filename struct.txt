@@ -25,6 +25,8 @@
 │   │   ├── restaurant.module.ts
 │   │   └── restaurant.service.ts
 │   └── sequential
+│       ├── dto
+│       │   └── sequential.dto.ts
 │       ├── sequential.controller.ts
 │       ├── sequential.module.ts
 │       └── sequential.service.ts
@@ -34,3 +36,5 @@
 │   └── jest-e2e.json
 ├── tsconfig.build.json
 └── tsconfig.json
+
+16 directories, 87 files
