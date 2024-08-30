@@ -11,9 +11,13 @@
 │   ├── common
 │   │   ├── database.config.ts
 │   │   ├── preprocessing.ts
-│   │   └── utils.ts
+│   │   ├── utils.ts
+│   │   └── worker.ts
 │   ├── main.ts
 │   ├── optimized
+│   │   ├── check.ts
+│   │   ├── dto
+│   │   │   └── optimized.dto.ts
 │   │   ├── optimized.controller.ts
 │   │   ├── optimized.module.ts
 │   │   └── optimized.service.ts
@@ -37,4 +41,4 @@
 ├── tsconfig.build.json
 └── tsconfig.json
 
-16 directories, 87 files
+18 directories, 99 files

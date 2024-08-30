@@ -9,6 +9,8 @@ import { SequentialService } from './sequential/sequential.service';
 import { SequentialController } from './sequential/sequential.controller';
 import { OptimizedController } from './optimized/optimized.controller';
 import { OptimizedService } from './optimized/optimized.service';
+import { ThreadController } from './thread/thread.controller';
+import { ThreadService } from './thread/thread.service';
 
 @Module({
   imports: [
@@ -19,7 +21,13 @@ import { OptimizedService } from './optimized/optimized.service';
     RestaurantController,
     SequentialController,
     OptimizedController,
+    ThreadController,
   ], // 컨트롤러 등록
-  providers: [RestaurantService, SequentialService, OptimizedService], // 서비스 등록
+  providers: [
+    RestaurantService,
+    SequentialService,
+    OptimizedService,
+    ThreadService,
+  ], // 서비스 등록
 })
 export class AppModule {}
